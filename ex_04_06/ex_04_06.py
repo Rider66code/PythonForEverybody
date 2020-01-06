@@ -8,8 +8,7 @@ def computepay():
         pay = 40*frate+(fhrs-40)*(frate*1.5)
 
     else:
-        #pay = fhrs*frate
-        pay=str('Lol, notting')
+        pay = fhrs*frate
 
     return pay
 
