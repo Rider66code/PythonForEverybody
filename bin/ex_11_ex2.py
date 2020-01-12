@@ -61,7 +61,7 @@ def search(act_data):
     navg=int(total/count)
     print('Average value for New Revision:',navg)
 
-fname = input("Enter file name:\n ")
+fname = input("Enter file name:\n")
 try:
     fh = open(fname)
 except:

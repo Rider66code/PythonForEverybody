@@ -52,7 +52,7 @@ def search(act_data,regexp,sfile):
         count=count+1
     print(fname,'had',int(count),'lines that matched',regexp)
 
-fname = input("Enter file name:\n ")
+fname = input("Enter file name:\n")
 try:
     fh = open(fname)
 except:

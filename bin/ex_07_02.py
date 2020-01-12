@@ -9,7 +9,7 @@
 #    if not line.startswith("X-DSPAM-Confidence:") : continue
 #    print(line)
 #print("Done")
-fname = input("Enter file name:\n ")
+fname = input("Enter file name:\n")
 try:
     fh = open(fname)
 except:
@@ -30,4 +30,4 @@ for line in fh:
         ltotal=ltotal+lval
 
 lavg=ltotal/lcount
-print("Average spam confidence:",lavg)        
+print("Average spam confidence:",lavg)

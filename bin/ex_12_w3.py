@@ -46,6 +46,6 @@ def opensock(host,file):
 #     print(data.decode(),end='')
 #
 # mysock.close()
-hname = input("Enter host name:\n ")
-fname = input("Enter file name:\n ")
+hname = input("Enter host name:\n")
+fname = input("Enter file name:\n")
 opensock(hname,fname)

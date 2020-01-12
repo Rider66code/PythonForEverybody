@@ -9,7 +9,7 @@
 #fh = open(fname)
 #count = 0
 #print("There were", count, "lines in the file with From as the first word")
-fname = input("Enter file name:\n ")
+fname = input("Enter file name:\n")
 try:
     fh = open(fname)
 except:

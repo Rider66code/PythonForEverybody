@@ -3,7 +3,7 @@
 # if len(name) < 1 : name = "mbox-short.txt"
 # handle = open(name)
 # Exercise 3: Write a program to read through a mail log, build a histogram using a dictionary to count how many messages have come from each email address, and print the dictionary.
-fname = input("Enter file name:\n ")
+fname = input("Enter file name:\n")
 try:
     fh = open(fname)
 except:

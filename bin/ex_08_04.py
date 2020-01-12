@@ -5,7 +5,7 @@
 # lst = list()
 # for line in fh:
 # print(line.rstrip())
-fname = input("Enter file name:\n ")
+fname = input("Enter file name:\n")
 try:
     fh = open(fname)
 except:

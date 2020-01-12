@@ -46,7 +46,7 @@ def summing(list_data):
         total=total+int(val)
     print("Sum of random numbers in the text is:",total)
 
-fname = input("Enter file name:\n ")
+fname = input("Enter file name:\n")
 try:
     fh = open(fname)
 except:

@@ -4,7 +4,7 @@
 # name = input("Enter file:")
 # if len(name) < 1 : name = "mbox-short.txt"
 # handle = open(name)
-fname = input("Enter file name:\n ")
+fname = input("Enter file name:\n")
 try:
     fh = open(fname)
 except:
