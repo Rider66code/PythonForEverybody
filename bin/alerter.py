@@ -13,19 +13,26 @@ Uses parameters which control symbol's applicability.
 Take generated list, create many lines and pass it to console.
 Get and parse console output.
 """
+# Requires cx_Oracle, which
+# Requires Oracle Client Library - https://oracle.github.io/odpi/doc/installation.html - DS
 
-#Requires Oracle Client Library - https://oracle.github.io/odpi/doc/installation.html - DS
 
-__author__ = 'Ilya R. Dementyev'
-__version__ = '0.1'
-__date__ = '2016-02-01'
+# 0.1 - Initial Release
+# 0.2 - Database input values added
 
+#__author__ = 'Ilya R. Dementyev'
+#__version__ = '0.1'
+#__date__ = '2016-02-01'
+__author__ = 'Dmitrii A. Samodurov'
+__version__ = '0.2'
+__date__ = '2019-01-13'
 
 def rows_to_dict_list(cursor):
     columns = [i[0] for i in cursor.description]
     return [dict(zip(columns, row)) for row in cursor]
 
 def get_symbols(limit=10, days=30):
+    global connstring
     """
     :param limit: number of symbols to return
     :param days: number of days to look back for
@@ -47,7 +54,7 @@ def get_symbols(limit=10, days=30):
         group by i.symbol, i.instrument_id
         order by count(o.order_id) desc)
     where rownum <= {limit}""".format(limit=limit, days=days)
-    con = cx_Oracle.connect('tosqa/tosqa@leo/tos12c.in.devexperts.com')
+    con = cx_Oracle.connect(str(connstring))
     cur = con.cursor()
     cur.execute(sql)
     data = rows_to_dict_list(cur)
@@ -85,6 +92,23 @@ p.add_argument('-p', '--price', nargs=2, default=[1000, 10000],
                help="2 prices: min & max, separated by space")
 args = p.parse_args()
 
+db_user=input('Please enter database user name (default is tosqa):')
+if len(db_user)<1:
+    db_user='tosqa'
+db_pass=input('Please enter database user password (default is tosqa):')
+if len(db_pass)<1:
+    db_pass='tosqa'
+db_host=input('Please enter database host (default is tosrs1oracle):')
+if len(db_host)<1:
+    db_host='tosrs1oracle'
+db_service=input('Please enter database service name (default is tosst12.in.devexperts.com):')
+if len(db_service)<1:
+    db_service='tosst12.in.devexperts.com'
+
+
+connstring=db_user+'/'+db_pass+'@'+db_host+'/'+db_service
+print('Following database connection will be used:',connstring)
+
 cut_off = args.frequency  # M
 number = args.number  # N
 alert_number = args.alerts  # alerts number
@@ -92,6 +116,7 @@ price_range = args.price  # price list
 login_mask = "perf_test%"  # SQL mask syntax
 sql = """select * from users where login_name like '{mask}'""".format(
     mask=login_mask)
+#symbols_file = 'working_symbols.json'
 out_file = 'parsed_alerts.json'
 
 # currently limit is set to 2*N. Incremental logic should be present instead
@@ -109,7 +134,7 @@ for pair in data:
             break
         n += 1
 
-con = cx_Oracle.connect('tosqa/tosqa@leo/tos12c.in.devexperts.com')
+con = cx_Oracle.connect(str(connstring))
 cur = con.cursor()
 cur.execute(sql)
 users = rows_to_dict_list(cur)

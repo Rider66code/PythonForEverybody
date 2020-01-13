@@ -5,8 +5,22 @@ import subprocess
 
 file = 'parsed_alerts.json'
 
-with open(file) as f:
-    alerts = json.load(f)
+mx_quote_host=input('Please enter multiplexor quote host (default is tosrs1app1):')
+if len(mx_quote_host)<1:
+    mx_quote_host='tosrs1app1'
+mx_quote_port=input('Please enter multiplexor quote port (default is 7015):')
+if len(mx_quote_port)<1:
+    mx_quote_port='7015'
+
+connstring=mx_quote_host+':'+mx_quote_port
+print('Following multiplexor connection will be used for posting prices:',connstring)
+
+try:
+    with open(file) as f:
+        alerts = json.load(f)
+except:
+    print('parsed_alerts.json file not found, exiting.')
+    quit()
 
 # we want to post a bare minimum of trades
 # Idea: get max price for each symbol and then post
@@ -40,7 +54,7 @@ for s, p in prices.items():
 
 command = '\n'.join(records) + '\n'
 
-con = subprocess.Popen(['qds', 'post', 'keen:7015'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+con = subprocess.Popen(['qds', 'post', str(connstring)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 out, err = con.communicate(bytes(command, 'utf-8'))
 out = out.decode().split('\n')
 for l in out:
