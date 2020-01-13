@@ -18,12 +18,10 @@ Get and parse console output.
 
 
 # 0.1 - Initial Release
-# 0.2 - Database input values added
+# 0.2 - Configuration file added for setting desired parameters
+#       Some exception handlers added
 
-#__author__ = 'Ilya R. Dementyev'
-#__version__ = '0.1'
-#__date__ = '2016-02-01'
-__author__ = 'Dmitrii A. Samodurov'
+__author__ = 'Ilya R. Dementyev, Dmitrii A. Samodurov'
 __version__ = '0.2'
 __date__ = '2019-01-13'
 
@@ -54,7 +52,11 @@ def get_symbols(limit=10, days=30):
         group by i.symbol, i.instrument_id
         order by count(o.order_id) desc)
     where rownum <= {limit}""".format(limit=limit, days=days)
-    con = cx_Oracle.connect(str(connstring))
+    try:
+        con = cx_Oracle.connect(str(connstring))
+    except:
+        print('Cannot connect to the database, exiting.')
+        quit()
     cur = con.cursor()
     cur.execute(sql)
     data = rows_to_dict_list(cur)
@@ -92,20 +94,21 @@ p.add_argument('-p', '--price', nargs=2, default=[1000, 10000],
                help="2 prices: min & max, separated by space")
 args = p.parse_args()
 
-db_user=input('Please enter database user name (default is tosqa):')
-if len(db_user)<1:
-    db_user='tosqa'
-db_pass=input('Please enter database user password (default is tosqa):')
-if len(db_pass)<1:
-    db_pass='tosqa'
-db_host=input('Please enter database host (default is tosrs1oracle):')
-if len(db_host)<1:
-    db_host='tosrs1oracle'
-db_service=input('Please enter database service name (default is tosst12.in.devexperts.com):')
-if len(db_service)<1:
-    db_service='tosst12.in.devexperts.com'
+config_file = 'alerter_config.json'
+try:
+    with open(config_file) as f:
+        config = json.load(f)
+except:
+    print('alerter_config.json file not found, exiting.')
+    quit()
+print('Configuration file found:',config_file)
 
-
+db_user=config["db_user"]
+db_pass=config["db_pass"]
+db_host=config["db_host"]
+db_service=config["db_service"]
+login_mask='"'+config["login_mask"]+'"'
+print('Following user mask will be used for id list generation:',login_mask)
 connstring=db_user+'/'+db_pass+'@'+db_host+'/'+db_service
 print('Following database connection will be used:',connstring)
 
@@ -113,7 +116,6 @@ cut_off = args.frequency  # M
 number = args.number  # N
 alert_number = args.alerts  # alerts number
 price_range = args.price  # price list
-login_mask = "perf_test%"  # SQL mask syntax
 sql = """select * from users where login_name like '{mask}'""".format(
     mask=login_mask)
 #symbols_file = 'working_symbols.json'
@@ -133,8 +135,11 @@ for pair in data:
         else:
             break
         n += 1
-
-con = cx_Oracle.connect(str(connstring))
+try:
+    con = cx_Oracle.connect(str(connstring))
+except:
+    print('Cannot connect to the database, exiting.')
+    quit()
 cur = con.cursor()
 cur.execute(sql)
 users = rows_to_dict_list(cur)

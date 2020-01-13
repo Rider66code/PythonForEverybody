@@ -1,0 +1,9 @@
+{
+  "db_user" : "tosqa",
+  "db_pass" : "tosqa",
+  "db_host" : "tosrs1oracle",
+  "db_service" : "tosst12.in.devexperts.com",
+  "login_mask" : "qas_%",
+  "mx_quote_host" : "tosrs1app1",
+  "mx_quote_port" : "7015"
+}

@@ -3,17 +3,16 @@
 import json
 import subprocess
 
+config_file = 'alerter_config.json'
 file = 'parsed_alerts.json'
 
-mx_quote_host=input('Please enter multiplexor quote host (default is tosrs1app1):')
-if len(mx_quote_host)<1:
-    mx_quote_host='tosrs1app1'
-mx_quote_port=input('Please enter multiplexor quote port (default is 7015):')
-if len(mx_quote_port)<1:
-    mx_quote_port='7015'
-
-connstring=mx_quote_host+':'+mx_quote_port
-print('Following multiplexor connection will be used for posting prices:',connstring)
+try:
+    with open(config_file) as f:
+        config = json.load(f)
+except:
+    print('alerter_config.json file not found, exiting.')
+    quit()
+print('Configuration file found:',config_file)
 
 try:
     with open(file) as f:
@@ -21,6 +20,13 @@ try:
 except:
     print('parsed_alerts.json file not found, exiting.')
     quit()
+print('Parsed alerts file found:',file)
+
+mx_quote_host=config["mx_quote_host"]
+mx_quote_port=config["mx_quote_port"]
+
+connstring=mx_quote_host+':'+mx_quote_port
+print('Following multiplexor connection will be used for posting prices:',connstring)
 
 # we want to post a bare minimum of trades
 # Idea: get max price for each symbol and then post
