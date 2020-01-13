@@ -1,0 +1,2 @@
+Browser colors: https://www.w3schools.com/colors/colors_names.asp
+Turtle Methods: http://docs.python.org/dev/py3k/library/turtle.html
