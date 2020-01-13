@@ -14,6 +14,8 @@ Take generated list, create many lines and pass it to console.
 Get and parse console output.
 """
 
+#Requires Oracle Client Library - https://oracle.github.io/odpi/doc/installation.html - DS
+
 __author__ = 'Ilya R. Dementyev'
 __version__ = '0.1'
 __date__ = '2016-02-01'
