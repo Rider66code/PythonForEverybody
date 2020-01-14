@@ -13,6 +13,9 @@ Uses parameters which control symbol's applicability.
 Take generated list, create many lines and pass it to console.
 Get and parse console output.
 """
+
+#Some Comment
+
 # Requires cx_Oracle, which
 # Requires Oracle Client Library - https://oracle.github.io/odpi/doc/installation.html - DS
 
