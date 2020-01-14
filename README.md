@@ -15,7 +15,7 @@ Course 4: Using Databases with Python (https://www.coursera.org/learn/python-dat
 
 Capstone: Retrieving, Processing, and Visualizing Data with Python (https://www.coursera.org/learn/python-data-visualization)
 
-#Python 3 Programming
+# Python 3 Programming
 
 Based on following specialization in Coursera: https://www.coursera.org/specializations/python-3-programming
 
