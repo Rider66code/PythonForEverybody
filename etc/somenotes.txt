@@ -1,2 +1,6 @@
 Browser colors: https://www.w3schools.com/colors/colors_names.asp
 Turtle Methods: http://docs.python.org/dev/py3k/library/turtle.html
+cImage lib: https://github.com/bnmnetp/cImage
+Foundations of Python Programming: https://fopp.umsi.education/books/published/fopp/index.html (Needs Coursera Login)
+Docs: http://docs.python.org/py3k/library/stdtypes.html#sequence-types-str-bytes-bytearray-list-tuple-range
+Strings: http://docs.python.org/3/library/stdtypes.html#string-methods
