@@ -1,10 +1,6 @@
-# Challenge: Using the file school_prompt.txt, if the character ‘p’ is in a word, then add the word to a list called p_words.
-fileref = open("school_prompt.txt", "r")
-p_words=[]
-for line in fileref:
-    linelist=line.split()
-    for word in linelist:
-        if 'p' in word:
-            p_words.append(word)
-print(p_words)
-fileref.close()
+# We have a dictionary of the specific events that Italy has won medals in and the number of medals they have won for each event. Assign to the variable events a list of the keys from the dictionary medal_events. Do not hard code this.
+events=[]
+medal_events = {'Shooting': 7, 'Fencing': 4, 'Judo': 2, 'Swimming': 3, 'Diving': 2}
+for event in medal_events:
+    events.append(event)
+print(events)

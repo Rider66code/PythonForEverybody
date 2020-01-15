@@ -1,10 +1,4 @@
-# Challenge: Using the file school_prompt.txt, if the character ‘p’ is in a word, then add the word to a list called p_words.
-fileref = open("school_prompt.txt", "r")
-p_words=[]
-for line in fileref:
-    linelist=line.split()
-    for word in linelist:
-        if 'p' in word:
-            p_words.append(word)
-print(p_words)
-fileref.close()
+# Add the string “hockey” as a key to the dictionary sports_periods and assign it the value of 3. Do not rewrite the entire dictionary.
+sports_periods = {'baseball': 9, 'basketball': 4, 'soccer': 4, 'cricket': 2}
+sports_periods["hockey"] = 3
+print(sports_periods)

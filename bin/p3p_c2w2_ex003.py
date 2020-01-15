@@ -1,10 +1,4 @@
-# Challenge: Using the file school_prompt.txt, if the character ‘p’ is in a word, then add the word to a list called p_words.
-fileref = open("school_prompt.txt", "r")
-p_words=[]
-for line in fileref:
-    linelist=line.split()
-    for word in linelist:
-        if 'p' in word:
-            p_words.append(word)
-print(p_words)
-fileref.close()
+# Update the value for “Phelps” in the dictionary swimmers to include his medals from the Rio Olympics by adding 5 to the current value (Phelps will now have 28 total medals). Do not rewrite the dictionary.
+swimmers = {'Manuel':4, 'Lochte':12, 'Adrian':7, 'Ledecky':5, 'Dirado':4, 'Phelps':23}
+swimmers["Phelps"] = swimmers["Phelps"]+5
+print(swimmers["Phelps"])

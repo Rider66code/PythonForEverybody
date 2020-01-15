@@ -1,10 +1,6 @@
-# Challenge: Using the file school_prompt.txt, if the character ‘p’ is in a word, then add the word to a list called p_words.
-fileref = open("school_prompt.txt", "r")
-p_words=[]
-for line in fileref:
-    linelist=line.split()
-    for word in linelist:
-        if 'p' in word:
-            p_words.append(word)
-print(p_words)
-fileref.close()
+# Create a list of the countries that are in the dictionary golds, and assign that list to the variable name countries. Do not hard code this.
+countries=[]
+golds = {"Italy": 12, "USA": 33, "Brazil": 15, "China": 27, "Spain": 19, "Canada": 22, "Argentina": 8, "England": 29}
+for country in golds:
+    countries.append(country)
+print(countries)    

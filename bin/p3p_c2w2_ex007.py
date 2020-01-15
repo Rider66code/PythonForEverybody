@@ -1,10 +1,3 @@
-# Challenge: Using the file school_prompt.txt, if the character ‘p’ is in a word, then add the word to a list called p_words.
-fileref = open("school_prompt.txt", "r")
-p_words=[]
-for line in fileref:
-    linelist=line.split()
-    for word in linelist:
-        if 'p' in word:
-            p_words.append(word)
-print(p_words)
-fileref.close()
+# Given the dictionary swimmers, add an additional key-value pair to the dictionary with "Phelps" as the key and the integer 23 as the value. Do not rewrite the entire dictionary.
+swimmers = {'Manuel':4, 'Lochte':12, 'Adrian':7, 'Ledecky':5, 'Dirado':4}
+swimmers["Phelps"] = 23
