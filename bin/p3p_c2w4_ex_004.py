@@ -1,6 +1,12 @@
-#Given is the dictionary, gold, which shows the country and the number of gold medals they have earned so far in the 2016 Olympics. Create a list, num_medals, that contains only the number of medals for each country. You must use the .items() method. Note: The .items() method provides a list of tuples. Do not use .keys() method.
-num_medals=[]
-gold = {'USA':31, 'Great Britain':19, 'China':19, 'Germany':13, 'Russia':12, 'Japan':10, 'France':8, 'Italy':8}
-for info in gold.items():
-    num_medals.append(info[1])
-print(num_medals)
+#Write a function called stop_at_four that iterates through a list of numbers. Using a while loop, append each number to a new list until the number 4 appears. The function should return the new list.
+def stop_at_four(limit_num):
+    tmp_list=[]
+    tmp_val=0
+    counter=0
+    while (counter<len(limit_num)) and (limit_num[counter]!=4):
+        tmp_list.append(limit_num[counter])
+        counter+=1
+    return tmp_list
+
+val_list=[1,6,2,3,9]
+print(stop_at_four(val_list))

@@ -1,3 +1,6 @@
-julia = "Julia", "Roberts", 1967, "Duplicity", 2009, "Actress", "Atlanta, Georgia"
+while True:
+    print("this phrase will always print")
+    break
+    print("Does this phrase print?")
 
-name, surname, birth_year, movie, movie_year, profession, birth_place = julia
+print("We are done with the while loop.")

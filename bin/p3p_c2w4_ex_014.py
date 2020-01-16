@@ -1,6 +1,7 @@
-#Given is the dictionary, gold, which shows the country and the number of gold medals they have earned so far in the 2016 Olympics. Create a list, num_medals, that contains only the number of medals for each country. You must use the .items() method. Note: The .items() method provides a list of tuples. Do not use .keys() method.
-num_medals=[]
-gold = {'USA':31, 'Great Britain':19, 'China':19, 'Germany':13, 'Russia':12, 'Japan':10, 'France':8, 'Italy':8}
-for info in gold.items():
-    num_medals.append(info[1])
-print(num_medals)
+#6. Currently the function is supposed to take 1 required parameter, and 2 optional parameters, however the code doesn’t work. Fix the code so that it passes the test. This should only require changing one line of code.
+
+def waste(mar, var = "Water", marble = "type"):
+    final_string = var + " " + marble + " " + mar
+    return final_string
+
+print(waste(mar='Lol'))

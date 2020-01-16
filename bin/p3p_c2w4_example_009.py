@@ -1,3 +1,6 @@
-julia = "Julia", "Roberts", 1967, "Duplicity", 2009, "Actress", "Atlanta, Georgia"
+b = 15
 
-name, surname, birth_year, movie, movie_year, profession, birth_place = julia
+while b < 60:
+    b = 5
+    print("Bugs")
+    b = b + 7

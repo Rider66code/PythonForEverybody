@@ -1,3 +1,9 @@
-julia = "Julia", "Roberts", 1967, "Duplicity", 2009, "Actress", "Atlanta, Georgia"
+# this works
+names = ["Jack","Jill","Mary"]
+for n in names:
+    print("'{}!' she yelled. '{}! {}, {}!'".format(n,n,n,"say hello"))
 
-name, surname, birth_year, movie, movie_year, profession, birth_place = julia
+# but this also works!
+names = ["Jack","Jill","Mary"]
+for n in names:
+    print("'{0}!' she yelled. '{0}! {0}, {1}!'".format(n,"say hello"))

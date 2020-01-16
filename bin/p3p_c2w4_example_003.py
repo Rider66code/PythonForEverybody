@@ -1,3 +1,18 @@
-julia = "Julia", "Roberts", 1967, "Duplicity", 2009, "Actress", "Atlanta, Georgia"
+def checkout():
+    total = 0
+    count = 0
+    moreItems = True
+    while moreItems:
+        price = float(input('Enter price of item (0 when done): '))
+        if price != 0:
+            count = count + 1
+            total = total + price
+            print('Subtotal: $', total)
+        else:
+            moreItems = False
+    average = total / count
+    print('Total items:', count)
+    print('Total $', total)
+    print('Average price per item: $', average)
 
-name, surname, birth_year, movie, movie_year, profession, birth_place = julia
+checkout()

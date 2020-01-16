@@ -1,6 +1,7 @@
-#Given is the dictionary, gold, which shows the country and the number of gold medals they have earned so far in the 2016 Olympics. Create a list, num_medals, that contains only the number of medals for each country. You must use the .items() method. Note: The .items() method provides a list of tuples. Do not use .keys() method.
-num_medals=[]
-gold = {'USA':31, 'Great Britain':19, 'China':19, 'Germany':13, 'Russia':12, 'Japan':10, 'France':8, 'Italy':8}
-for info in gold.items():
-    num_medals.append(info[1])
-print(num_medals)
+#3. Write a function called str_mult that takes in a required string parameter and an optional integer parameter. The default value for the integer parameter should be 3. The function should return the string multiplied by the integer parameter.
+def str_mult(str,val=3):
+    mulstr=str*val
+    return mulstr
+
+print(str_mult('Hello'))
+print(str_mult('Bye',9))

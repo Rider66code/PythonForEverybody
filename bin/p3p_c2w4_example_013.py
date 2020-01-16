@@ -1,3 +1,10 @@
-julia = "Julia", "Roberts", 1967, "Duplicity", 2009, "Actress", "Atlanta, Georgia"
+def f(x):
+    return x - 1
 
-name, surname, birth_year, movie, movie_year, profession, birth_place = julia
+print(f)
+print(type(f))
+print(f(3))
+
+print(lambda x: x-2)
+print(type(lambda x: x-2))
+print((lambda x: x-2)(6))

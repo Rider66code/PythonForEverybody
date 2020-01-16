@@ -1,3 +1,2 @@
-julia = "Julia", "Roberts", 1967, "Duplicity", 2009, "Actress", "Atlanta, Georgia"
-
-name, surname, birth_year, movie, movie_year, profession, birth_place = julia
+last_char = (lambda s: s[-1])
+print(last_char('Hello'))
