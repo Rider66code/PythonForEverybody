@@ -23,9 +23,9 @@ Covered parts are:
 
 Course 1: Python Basics (https://www.coursera.org/learn/python-basics/home/welcome)
 
-Folowing parts are in progress:
-
 Course 2: Python Functions, Files, and Dictionaries (https://www.coursera.org/learn/python-functions-files-dictionaries/home/welcome)
+
+Folowing parts are in progress:
 
 Course 3: Data Collection and Processing with Python (https://www.coursera.org/learn/data-collection-processing-python/home/welcome)
 
