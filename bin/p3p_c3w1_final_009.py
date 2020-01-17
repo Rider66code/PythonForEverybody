@@ -1,12 +1,15 @@
-#Below, we have provided a list of lists named L. Use nested iteration to save every string containing “b” into a new list named b_strings.
-L = [['apples', 'bananas', 'oranges', 'blueberries', 'lemons'], ['carrots', 'peas', 'cucumbers', 'green beans'], ['root beer', 'smoothies', 'cranberry juice']]
-def list_get(somelist):
-    templist=list()
-    for sublist in somelist:
-        for substring in sublist:
-            if 'b' in substring:
-                templist.append(substring)
-    return templist
+#Given below is a list of lists of athletes. Create a list, t, that saves only the athlete’s name if it contains the letter “t”. If it does not contain the letter “t”, save the athlete name into list other.
 
-b_strings=list_get(L)
-print(b_strings)
+athletes = [['Phelps', 'Lochte', 'Schooling', 'Ledecky', 'Franklin'], ['Felix', 'Bolt', 'Gardner', 'Eaton'], ['Biles', 'Douglas', 'Hamm', 'Raisman', 'Mikulak', 'Dalton']]
+t=list()
+other=list()
+for sublist in athletes:
+    for name in sublist:
+        if type(name)==str:
+            if 't' in name:
+                t.append(name)
+            else:
+                other.append(name)
+
+print(t)
+print(other)

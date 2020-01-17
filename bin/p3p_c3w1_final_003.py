@@ -1,12 +1,39 @@
-#Below, we have provided a list of lists named L. Use nested iteration to save every string containing “b” into a new list named b_strings.
-L = [['apples', 'bananas', 'oranges', 'blueberries', 'lemons'], ['carrots', 'peas', 'cucumbers', 'green beans'], ['root beer', 'smoothies', 'cranberry juice']]
-def list_get(somelist):
-    templist=list()
-    for sublist in somelist:
-        for substring in sublist:
-            if 'b' in substring:
-                templist.append(substring)
-    return templist
+#Below, we’ve provided a list of lists. Use in statements to create variables with Boolean values - see the ActiveCode window for further directions.
 
-b_strings=list_get(L)
-print(b_strings)
+L = [[5, 8, 7], ['hello', 'hi', 'hola'], [6.6, 1.54, 3.99], ['small', 'large']]
+
+# Test if 'hola' is in the list L. Save to variable name test1
+test1=None
+for SL in L:
+    for elem in SL:
+        if 'hola'==SL:
+            test1=True
+            print(test1)
+        else:
+            test1=False
+print(test1)
+
+# Test if [5, 8, 7] is in the list L. Save to variable name test2
+test2=None
+temp=[5,8,7]
+print(temp)
+temp.sort()
+for SL in L:
+    SL.sort()
+    if temp == SL:
+        test2=True
+    else:
+        test2=True
+print(test2)
+
+# Test if 6.6 is in the third element of list L. Save to variable name test3
+test3=None
+for SL in L:
+    for elem in SL:
+        if 'hola'==SL:
+            test3=True
+        else:
+            test3=True
+print(test3)
+
+#Exercise broken.

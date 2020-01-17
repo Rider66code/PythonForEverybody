@@ -1,12 +1,10 @@
-#Below, we have provided a list of lists named L. Use nested iteration to save every string containing “b” into a new list named b_strings.
-L = [['apples', 'bananas', 'oranges', 'blueberries', 'lemons'], ['carrots', 'peas', 'cucumbers', 'green beans'], ['root beer', 'smoothies', 'cranberry juice']]
-def list_get(somelist):
-    templist=list()
-    for sublist in somelist:
-        for substring in sublist:
-            if 'b' in substring:
-                templist.append(substring)
-    return templist
+#Given the dictionary, nested_d, save the medal count for the USA from all three Olympics in the dictionary to the list US_count.
+nested_d = {'Beijing':{'China':51, 'USA':36, 'Russia':22, 'Great Britain':19}, 'London':{'USA':46, 'China':38, 'Great Britain':29, 'Russia':22}, 'Rio':{'USA':35, 'Great Britain':22, 'China':20, 'Germany':13}}
 
-b_strings=list_get(L)
-print(b_strings)
+US_count = []
+for city in nested_d:
+    print(nested_d[city])
+    for country in nested_d[city]:
+        if country=='USA':
+            US_count.append(nested_d[city][country])
+print(US_count)
