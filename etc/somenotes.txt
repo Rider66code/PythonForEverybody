@@ -6,3 +6,4 @@ Docs: http://docs.python.org/py3k/library/stdtypes.html#sequence-types-str-bytes
 Strings: http://docs.python.org/3/library/stdtypes.html#string-methods
 Dictionaries: http://docs.python.org/py3k/library/stdtypes.html#mapping-types-dict
 Webinar: https://www.youtube.com/watch?v=mPKNUjyJ-6o
+OOP: https://en.wikipedia.org/wiki/Object-oriented_programming
