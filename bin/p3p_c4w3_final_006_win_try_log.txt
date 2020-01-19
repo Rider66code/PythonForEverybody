@@ -1,0 +1,177 @@
+===============
+WHEEL OF PYTHON
+===============
+
+
+---------------
+
+Category: Place
+Phrase:   _____ _______ __________
+Guessed:
+
+ggg spins...
+$2500!
+Need $250 to guess a vowel. Try again.
+ggg guesses "D"
+There is no D
+
+---------------
+
+Category: Place
+Phrase:   _____ _______ __________
+Guessed:  D
+
+Computer 1 spins...
+Lose a turn!
+
+---------------
+
+Category: Place
+Phrase:   _____ _______ __________
+Guessed:  D
+
+Computer 2 spins...
+$2500!
+Computer 2 guesses "T"
+There is one T
+
+---------------
+
+Category: Place
+Phrase:   ___T_ _______ __________
+Guessed:  D, T
+
+Computer 2 spins...
+$800!
+Computer 2 guesses "H"
+There is no H
+
+---------------
+
+Category: Place
+Phrase:   ___T_ _______ __________
+Guessed:  D, H, T
+
+ggg spins...
+Bankrupt!
+
+---------------
+
+Category: Place
+Phrase:   ___T_ _______ __________
+Guessed:  D, H, T
+
+Computer 1 spins...
+One Million!
+Computer 1 guesses "N"
+There are 2 N's
+
+---------------
+
+Category: Place
+Phrase:   __NT_ _______ _______N__
+Guessed:  D, H, N, T
+
+Computer 1 spins...
+900!
+Computer 1 guesses "P"
+There is no P
+
+---------------
+
+Category: Place
+Phrase:   __NT_ _______ _______N__
+Guessed:  D, H, N, P, T
+
+Computer 2 spins...
+900!
+Computer 2 guesses "E"
+There is no E
+
+---------------
+
+Category: Place
+Phrase:   __NT_ _______ _______N__
+Guessed:  D, E, H, N, P, T
+
+ggg spins...
+$2500!
+ggg guesses "M"
+There is no M
+
+---------------
+
+Category: Place
+Phrase:   __NT_ _______ _______N__
+Guessed:  D, E, H, M, N, P, T
+
+Computer 1 spins...
+$600!
+Computer 1 guesses "A"
+There are 7 A's
+
+---------------
+
+Category: Place
+Phrase:   _ANTA _A__A_A _A_____N_A
+Guessed:  A, D, E, H, M, N, P, T
+
+Computer 1 spins...
+$600!
+Computer 1 guesses "O"
+There is one O
+
+---------------
+
+Category: Place
+Phrase:   _ANTA _A__A_A _A___O_N_A
+Guessed:  A, D, E, H, M, N, O, P, T
+
+Computer 1 spins...
+$600!
+Computer 1 guesses "I"
+There are 2 I's
+
+---------------
+
+Category: Place
+Phrase:   _ANTA _A__A_A _A_I_O_NIA
+Guessed:  A, D, E, H, I, M, N, O, P, T
+
+Computer 1 spins...
+$600!
+Computer 1 guesses "S"
+There is one S
+
+---------------
+
+Category: Place
+Phrase:   SANTA _A__A_A _A_I_O_NIA
+Guessed:  A, D, E, H, I, M, N, O, P, S, T
+
+Computer 1 spins...
+$900!
+Computer 1 guesses "X"
+There is no X
+
+---------------
+
+Category: Place
+Phrase:   SANTA _A__A_A _A_I_O_NIA
+Guessed:  A, D, E, H, I, M, N, O, P, S, T, X
+
+Computer 2 spins...
+$900!
+Computer 2 guesses "G"
+There is no G
+
+---------------
+
+Category: Place
+Phrase:   SANTA _A__A_A _A_I_O_NIA
+Guessed:  A, D, E, G, H, I, M, N, O, P, S, T, X
+
+ggg spins...
+$600!
+ggg wins! The phrase was SANTA BARBARA CALIFORNIA
+ggg won $600
