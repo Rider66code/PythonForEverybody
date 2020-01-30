@@ -110,7 +110,8 @@ db_user=config["db_user"]
 db_pass=config["db_pass"]
 db_host=config["db_host"]
 db_service=config["db_service"]
-login_mask='"'+config["login_mask"]+'"'
+#login_mask='"'+config["login_mask"]+'"'
+login_mask=config["login_mask"]
 print('Following user mask will be used for id list generation:',login_mask)
 connstring=db_user+'/'+db_pass+'@'+db_host+'/'+db_service
 print('Following database connection will be used:',connstring)
