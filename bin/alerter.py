@@ -172,7 +172,8 @@ for n, i in enumerate(range(alert_number)):
         n=n, t=time_now, u=r_user['LOGIN_NAME'], uid=r_user['USER_ID'], s=r_symbol['SYMBOL'], sid=r_symbol['INSTRUMENT_ID'], p=r_price,
         spd=spd
     ))
-    commands.append("create-alert t={t} u={u} o=2 f=LAST p={p} spd={spd} smb={s} {{ i={i_id} q=1 }}".format(
+#    commands.append("create-alert t={t} u={u} o=2 f=LAST p={p} spd={spd} smb={s} {{ i={i_id} q=1 }}".format(
+    commands.append("create-alert t={t} u={u} o=2 f=LAST p={p} spd={spd} {{ i={i_id} q=1 }}".format(
         t=time_now, u=r_user['USER_ID'], p=r_price, spd=spd, s=r_symbol['SYMBOL'], i_id=r_symbol['INSTRUMENT_ID']
     ))
 
