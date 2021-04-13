@@ -4,11 +4,21 @@ import argparse
 import subprocess
 import json
 import os
+import concurrent.futures
 
 def keypress(x):
     tbdval=0
     console = subprocess.Popen(['adb','shell','input','keyboard','keyevent',x], shell=True)
     return tbdval
+
+def capfunc(capfile,captype):
+    sdpath='sdcard/'+capfile
+    if captype=='screen':
+        console = subprocess.check_call(['adb','shell','screencap',sdpath], shell=True)
+    elif captype=='video':
+        console = subprocess.check_call(['adb','shell','screenrecord',sdpath], shell=True)
+    console = subprocess.check_call(['adb','pull',sdpath], shell=True)
+    console = subprocess.check_call(['adb','shell','rm',sdpath], shell=True)
 
 __author__ = 'S.D.A.'
 __version__ = '0.0.1'
@@ -23,6 +33,7 @@ except:
     print('adb_rcu_cli.json file not found or not correct, exiting.')
     quit()
 print('Configuration file found:',config_file)
+executor = concurrent.futures.ThreadPoolExecutor(1)
 KB_KEYCODE_DPAD_UP=config["KB_KEYCODE_DPAD_UP"]
 KB_KEYCODE_DPAD_DOWN=config["KB_KEYCODE_DPAD_DOWN"]
 KB_KEYCODE_DPAD_LEFT=config["KB_KEYCODE_DPAD_LEFT"]
@@ -152,6 +163,24 @@ while True:
 
     elif name==KB_KEYCODE_TV_RADIO_SERVICE:
         keypress('KEYCODE_TV_RADIO_SERVICE')
+
+    elif name=='capture':
+        ctype='screen'
+        captype = input("Enter capture type:\n1 - to capture screenshot,\n2 - to capture video.\n")
+        if captype=='1':
+            ctype='screen'
+        elif captype=='2':
+            ctype='video'
+        else:
+            print('Unrecognised option, screenshot will be taken.\n')
+        capname = input("Enter file name:\n")
+        cappath = os.path.join(here, capname)
+        print(cappath)
+        if os.path.isfile(cappath):
+            print('File exists already')
+        else:
+            exec = executor.submit(capfunc,capname,ctype)
+            print(executor)
 
     elif name=='exit':
         break
